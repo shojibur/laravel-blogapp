@@ -32,4 +32,12 @@ class PostController extends Controller
            'body' => $request->body
        ]);
     }
+
+    public function destroy($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+
+        return back();
+    }
 }

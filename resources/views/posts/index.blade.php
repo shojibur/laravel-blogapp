@@ -36,7 +36,11 @@
                             <p class="mb-2"> {{ $post->body }} </p>
 
                             @if ($post->ownedBy(auth()->user()))
-                                <a href="" class="text-blue-500"> Delete </a>
+                                <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-blue-500"> Delete </button>
+                                </form>
                             @endif    
                         </div>
                     @endforeach
