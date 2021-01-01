@@ -8,5 +8,5 @@
 
 ## Generate post with factory 
 1. `php artisan tinker`
-2. Now in shell `App\Models\Post::factory()->times(20)->create(['user_id => 2']);
+2. Now in shell `App\Models\Post::factory()->times(20)->create(['user_id' => 2]);`
 User id should already exist
