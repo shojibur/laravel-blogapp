@@ -33,9 +33,12 @@ class PostController extends Controller
        ]);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, Post $post)
     {
-        $post = Post::find($id);
+        if( !$post->ownedBy($request->user()) ) {
+            return response(null, 401);
+        }
+
         $post->delete();
 
         return back();
