@@ -30,7 +30,7 @@
                         <div class="mb-4"> 
                             <div> 
                                 <a href="#" class="font-bold"> {{ $post->user->name }} </a> 
-                                <span class="text-gray-600 text-sm">Date</span>
+                                <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
                             </div>
 
                             <p class="mb-2"> {{ $post->body }} </p>
