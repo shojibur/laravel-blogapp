@@ -17,8 +17,12 @@ class PostController extends Controller
         return view('posts.index');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        dd('post');
+       $this->validate($request, [
+           'body' => 'required'
+       ]);
+
+       dd('passed');
     }
 }
