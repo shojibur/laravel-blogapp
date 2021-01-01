@@ -26,6 +26,18 @@
                         </div>
                     @enderror
                 </div>
+
+                <div class="mb-4">
+                    <label for="username" class="sr-only">username</label>
+                    <input type="text" name="username" id="username" placeholder="Username" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}">
+
+                    @error('username')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
                 <div class="mb-4">
                     <label for="password" class="sr-only">Password</label>
                     <input type="password" name="password" id="password" placeholder="Password" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password') border-red-500 @enderror">
