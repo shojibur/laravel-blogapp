@@ -23,6 +23,8 @@ class PostController extends Controller
            'body' => 'required'
        ]);
 
-       dd('passed');
+       $request->user()->posts()->create([
+           'body' => $request->body
+       ]);
     }
 }
